@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CREATIVE BRANDING</title>
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css"> -->
+        <link href="css/latofonts.css" rel="stylesheet">
+        <link href="css/latostyle.css" rel="stylesheet">
+        <link href="css/source-sans-pro.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="slider">
+            <div class="logo"></div>
+            <h2>CREATIVE BRANDING</h2>
+            <div class="hr"></div>
+            <p>Please familiarize yourself with our offer</p>
+            <button class="btn-empty" id="rm1">READ MORE</button>
+            <div id="arrow" class="arrow-down"></div>
+        </div>
+        <div class="aboutus" id="about">
+            <div class="menu-wrapper">
+                <div class="menu">
+                    <div class="logo-text">Onepage</div>
+                    <ul class="menu-items">
+                        <li class="item active"><a href="/">HOME</a></li>
+                        <li class="item"><a href="#about">ABOUT US</a></li>
+                        <li class="item"><a href="#portfolio">PORTFOLIO</a></li>
+                        <li class="item"><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2>ABOUT US</h2>
+            <div class="hr black"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod</p>
+            <div class="container">
+                <div class="grid">
+                    <div class="column">
+                        <div class="circle responsive"></div>
+                        <div class="caption">RESPONSIVE</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod <br> tempor incididunt</p>
+                    </div>
+                    <div class="column">
+                        <div class="circle minimalist"></div>
+                        <div class="caption">MINIMALIST</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod <br> tempor incididunt</p>
+                    </div>
+                    <div class="column">
+                        <div class="circle freebies"></div>
+                        <div class="caption">FREEBIES</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit, sed do eiusmod <br> tempor incididunt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio" id="portfolio">
+            <h2>PORTFOLIO</h2>
+            <div class="hr black"></div>
+            <div class="container">
+                <div class="grid">
+                    <div class="column flex-grid">
+                        <div class="cell"></div>
+                        <div class="cell cell-1"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="column flex-grid">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell cell-2"></div>
+                    </div>
+                    <div class="column flex-grid">
+                        <div class="cell"></div>
+                        <div class="cell cell-2"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-empty black">READ MORE</button>
+        </div>
+        <div class="partners">
+            <h3>Thanks for partners</h3>
+            <div class="container">
+                <div class="grid">
+                    <div class="column">
+                        <img src="img/partner1.png" class="partner">
+                    </div>
+                    <div class="column">
+                        <img src="img/archiq.png" class="partner">
+                    </div>
+                    <div class="column">
+                        <img src="img/thomson.png" class="partner">
+                    </div>
+                    <div class="column">
+                        <img src="img/alex.png" class="partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact" id="contact">
+            <h2>CONTACT</h2>
+            <div class="hr black"></div>
+            <div class="container">
+                <div class="grid">
+                    <div class="column">
+                        <form class="form">
+                            <div class="grid">
+                                <div class="column">
+                                    <label>YOUR NAME</label>
+                                    <input name="name" type="text" />
+                                </div>
+                                <div class="column">
+                                    <label>YOUR E-MAIL</label>
+                                    <input name="email" type="email" />
+                                </div>
+                            </div>
+                            <div class="space"></div>
+                            <label>MESSAGE</label>
+                            <textarea name="message"></textarea>
+                            <button type="submit">SEND</button>
+                        </form>
+                    </div>
+                    <div class="column">
+                        To contact us please use the contact form visible<br>
+                        <br><br>
+                        <b>Tomasz Mazurczak</b><br>
+                        <br><br>
+                        e-mail: <b>contact@thomsoon.com</b><br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="logo"></div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Dribbble</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>© 2014. All Rights Reserved Thomson.com</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script>
+            $('form button[type="submit"]').click(function(e){
+                e.preventDefault();
+                $.post("sendmail.php", $('form').serialize());
+                $(e.currentTarget).toggleClass("success");
+                setTimeout(function(){$(e.currentTarget).toggleClass("success")}, 3000);
+            });
+            $('a').click(function(){
+                $("html, body").animate({ scrollTop: $(this.getAttribute("href")).offset().top }, 1000);
+            });
+            $('#rm1').click(function(){
+                $("html, body").animate({ scrollTop: $('.aboutus').offset().top }, 1000);
+            });
+            $('#arrow').toggleClass("animate");
+            setInterval(function(){
+                $('#arrow').toggleClass("animate");
+            }, 3000);
+        </script>
+    </body>
+</html>
